@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --cola: #9A0002;
@@ -40,989 +41,2203 @@
     --edge: 4px;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
-
-  html{ scroll-behavior: smooth; }
-
-  body{
-    font-family: var(--sans);
-    background: var(--frost);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
   }
 
-  a{ color: inherit; text-decoration: none; }
+  html{
+    scroll-behavior:smooth;
+  }
 
-  section{ scroll-margin-top: var(--nav-h); }
+  body{
+    font-family:var(--sans);
+    background:var(--frost);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+
+  section{
+    scroll-margin-top:var(--nav-h);
+  }
 
   .wrap{
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 32px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
   }
 
   /* ---------- focus ---------- */
-  a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--navy);
-    outline-offset: 3px;
-    border-radius: 2px;
+
+  a:focus-visible,
+  button:focus-visible{
+    outline:2px solid var(--navy);
+    outline-offset:3px;
+    border-radius:2px;
   }
-  .nav a:focus-visible, .nav button:focus-visible,
-  .hero a:focus-visible, .hero button:focus-visible,
-  .cta a:focus-visible, .cta button:focus-visible,
-  .footer a:focus-visible, .footer button:focus-visible{
-    outline-color: var(--frost);
+
+  .nav a:focus-visible,
+  .nav button:focus-visible,
+  .hero a:focus-visible,
+  .hero button:focus-visible,
+  .cta a:focus-visible,
+  .cta button:focus-visible,
+  .footer a:focus-visible,
+  .footer button:focus-visible{
+    outline-color:var(--frost);
   }
 
   /* ---------- nav ---------- */
-  .nav{
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: var(--nav-h);
-    display: flex;
-    align-items: center;
-    z-index: 100;
-    background: rgba(110,0,1,0.55);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
-    border-bottom: 1px solid rgba(239,230,221,0.09);
-  }
-  .nav .wrap{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .brand{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 1.15rem;
-    letter-spacing: 0.01em;
-    color: var(--frost);
-  }
-  .brand svg{ width: 22px; height: 22px; flex-shrink: 0; }
-  .brand-logo{
-    width: 26px;
-    height: 26px;
-    flex-shrink: 0;
-    object-fit: contain;
-    /* logo artwork is black line-art; this recolors it to the cream nav tone */
-    filter: brightness(0) invert(1);
-  }
-  .footer-logo{
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-  }
-  .nav-links{
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--frost-70);
-  }
-  .nav-links a{ transition: color 0.2s ease; }
-  .nav-links a:hover{ color: var(--frost); }
-  .nav-cta{
-    padding: 9px 18px;
-    border: 1px solid var(--frost-30);
-    border-radius: var(--edge);
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--frost);
-    transition: border-color 0.2s ease, background 0.2s ease;
-  }
-  .nav-cta:hover{ background: rgba(239,230,221,0.08); border-color: var(--frost-55); }
-  .nav-toggle{ display:none; }
 
-  @media (max-width: 780px){
-    .nav-links{ display:none; }
+  .nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:var(--nav-h);
+    display:flex;
+    align-items:center;
+    z-index:100;
+    background:rgba(110,0,1,0.55);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid rgba(239,230,221,0.09);
+  }
+
+  .nav .wrap{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.15rem;
+    letter-spacing:0.01em;
+    color:var(--frost);
+  }
+
+  .brand svg{
+    width:22px;
+    height:22px;
+    flex-shrink:0;
+  }
+
+  .brand-logo{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+  }
+
+  .footer-logo{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+    object-fit:contain;
+    filter:brightness(0) invert(1);
+  }
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:36px;
+    font-size:0.88rem;
+    font-weight:500;
+    color:var(--frost-70);
+  }
+
+  .nav-links a{
+    transition:color 0.2s ease;
+  }
+
+  .nav-links a:hover{
+    color:var(--frost);
+  }
+
+  .nav-cta{
+    padding:9px 18px;
+    border:1px solid var(--frost-30);
+    border-radius:var(--edge);
+    font-size:0.82rem;
+    font-weight:500;
+    color:var(--frost);
+    transition:border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .nav-cta:hover{
+    background:rgba(239,230,221,0.08);
+    border-color:var(--frost-55);
+  }
+
+  .nav-toggle{
+    display:none;
+  }
+
+  @media (max-width:780px){
+    .nav-links{
+      display:none;
+    }
   }
 
   /* ---------- hero ---------- */
+
   .hero{
-    position: relative;
-    min-height: 100svh;
-    display: flex;
-    align-items: center;
-    background: var(--navy);
-    overflow: hidden;
-    padding-top: var(--nav-h);
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    background:var(--navy);
+    overflow:hidden;
+    padding-top:var(--nav-h);
   }
+
   .hero canvas{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0.9;
   }
+
   .hero::after{
     content:"";
     position:absolute;
     inset:0;
-    background: radial-gradient(ellipse 70% 55% at 30% 25%, rgba(154,0,2,0) 0%, rgba(110,0,1,0.55) 78%);
+    background:radial-gradient(
+      ellipse 70% 55% at 30% 25%,
+      rgba(154,0,2,0) 0%,
+      rgba(110,0,1,0.55) 78%
+    );
     pointer-events:none;
   }
+
   .hero-inner{
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
-    padding: 80px 0 100px;
+    position:relative;
+    z-index:2;
+    max-width:760px;
+    padding:80px 0 100px;
   }
+
   .eyebrow{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--frost-55);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 26px;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--frost-55);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:26px;
   }
+
   .eyebrow::before{
     content:"";
-    width: 22px; height: 1px;
-    background: var(--frost);
+    width:22px;
+    height:1px;
+    background:var(--frost);
   }
+
   .hero h1{
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(2.8rem, 7vw, 5.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.01em;
-    color: var(--frost);
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:clamp(2.8rem,7vw,5.6rem);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    color:var(--frost);
   }
+
   .hero h1 em{
-    font-style: italic;
-    font-weight: 400;
-    color: var(--frost);
+    font-style:italic;
+    font-weight:400;
+    color:var(--frost);
   }
+
   .hero p.lead{
-    margin-top: 26px;
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
-    line-height: 1.65;
-    color: var(--frost-70);
-    max-width: 480px;
+    margin-top:26px;
+    font-size:clamp(1rem,1.6vw,1.2rem);
+    line-height:1.65;
+    color:var(--frost-70);
+    max-width:480px;
   }
+
   .hero-actions{
-    margin-top: 42px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+    margin-top:42px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
   }
+
   .btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 26px;
-    font-size: 0.92rem;
-    font-weight: 500;
-    border-radius: var(--edge);
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    font-size:0.92rem;
+    font-weight:500;
+    border-radius:var(--edge);
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
+
   .btn-primary{
-    background: var(--cream);
-    color: var(--cola);
+    background:var(--cream);
+    color:var(--cola);
   }
-  .btn-primary:hover{ background: var(--cream-tint); transform: translateY(-1px); }
+
+  .btn-primary:hover{
+    background:var(--cream-tint);
+    transform:translateY(-1px);
+  }
+
   .btn-ghost-dark{
-    border: 1px solid var(--frost-30);
-    color: var(--frost);
+    border:1px solid var(--frost-30);
+    color:var(--frost);
   }
-  .btn-ghost-dark:hover{ border-color: var(--frost-55); background: rgba(239,230,221,0.06); }
+
+  .btn-ghost-dark:hover{
+    border-color:var(--frost-55);
+    background:rgba(239,230,221,0.06);
+  }
+
   .btn-ghost-light{
-    border: 1px solid var(--mist);
-    color: var(--ink);
+    border:1px solid var(--mist);
+    color:var(--ink);
   }
-  .btn-ghost-light:hover{ border-color: var(--navy); background: rgba(154,0,2,0.08); }
+
+  .btn-ghost-light:hover{
+    border-color:var(--navy);
+    background:rgba(154,0,2,0.08);
+  }
 
   .scroll-cue{
-    position: absolute;
-    left: 32px;
-    bottom: 34px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    color: var(--frost-55);
-    text-transform: uppercase;
+    position:absolute;
+    left:32px;
+    bottom:34px;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.14em;
+    color:var(--frost-55);
+    text-transform:uppercase;
   }
+
   .scroll-cue .line{
-    width: 30px; height: 1px;
-    background: var(--frost-30);
-    position: relative;
-    overflow: hidden;
+    width:30px;
+    height:1px;
+    background:var(--frost-30);
+    position:relative;
+    overflow:hidden;
   }
+
   .scroll-cue .line::after{
     content:"";
-    position:absolute; left:-100%; top:0; bottom:0; width:100%;
-    background: var(--frost);
-    animation: crawl 2.8s ease-in-out infinite;
+    position:absolute;
+    left:-100%;
+    top:0;
+    bottom:0;
+    width:100%;
+    background:var(--frost);
+    animation:crawl 2.8s ease-in-out infinite;
   }
+
   @keyframes crawl{
-    0%{ left:-100%; } 50%{ left:100%; } 100%{ left:100%; }
+    0%{left:-100%;}
+    50%{left:100%;}
+    100%{left:100%;}
   }
-  @media (max-width: 620px){ .scroll-cue{ display:none; } }
+
+  @media (max-width:620px){
+    .scroll-cue{
+      display:none;
+    }
+  }
 
   /* ---------- section heads ---------- */
+
   .section-head{
-    max-width: 640px;
-    margin-bottom: 56px;
+    max-width:640px;
+    margin-bottom:56px;
   }
-  .section-head .eyebrow{ color: var(--ink-55); margin-bottom: 18px; }
-  .section-head .eyebrow::before{ background: var(--navy); }
+
+  .section-head .eyebrow{
+    color:var(--ink-55);
+    margin-bottom:18px;
+  }
+
+  .section-head .eyebrow::before{
+    background:var(--navy);
+  }
+
   .section-head h2{
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
-    line-height: 1.2;
-    color: var(--ink);
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(1.7rem,3.4vw,2.5rem);
+    line-height:1.2;
+    color:var(--ink);
   }
+
   .section-head p{
-    margin-top: 16px;
-    font-size: 1.02rem;
-    line-height: 1.6;
-    color: var(--ink-70);
+    margin-top:16px;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--ink-70);
   }
 
   /* ---------- services ---------- */
-  .services{ padding: 130px 0 100px; }
+
+  .services{
+    padding:130px 0 100px;
+  }
+
   .service-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--mist);
-    border: 1px solid var(--mist);
-    border-radius: var(--edge);
-    overflow: hidden;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--mist);
+    border:1px solid var(--mist);
+    border-radius:var(--edge);
+    overflow:hidden;
   }
-  .service{ background: var(--frost); padding: 46px 44px; }
-  .service-icon{ margin-bottom: 24px; }
+
+  .service{
+    background:var(--frost);
+    padding:46px 44px;
+  }
+
+  .service-icon{
+    margin-bottom:24px;
+  }
+
   .service .thread-num{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    color: var(--steel-dark);
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--steel-dark);
   }
+
   .service h3{
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 1.45rem;
-    margin-top: 12px;
-    color: var(--ink);
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.45rem;
+    margin-top:12px;
+    color:var(--ink);
   }
+
   .service p.service-copy{
-    margin-top: 14px;
-    font-size: 0.97rem;
-    line-height: 1.6;
-    color: var(--ink-70);
-    max-width: 340px;
+    margin-top:14px;
+    font-size:0.97rem;
+    line-height:1.6;
+    color:var(--ink-70);
+    max-width:340px;
   }
-  @media (max-width: 780px){
-    .service-grid{ grid-template-columns: 1fr; }
+
+  @media (max-width:780px){
+    .service-grid{
+      grid-template-columns:1fr;
+    }
   }
 
   /* ---------- process ---------- */
+
   .process{
-    position: relative;
-    padding: 120px 0 140px;
-    background: var(--navy);
-    overflow: hidden;
-    isolation: isolate;
+    position:relative;
+    padding:120px 0 140px;
+    background:var(--navy);
+    overflow:hidden;
+    isolation:isolate;
   }
+
   .process-ripple-canvas{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+    pointer-events:none;
   }
+
   .process .wrap{
-    position: relative;
-    z-index: 1;
+    position:relative;
+    z-index:1;
   }
-  .process .section-head .eyebrow{ color: var(--frost-55); }
-  .process .section-head .eyebrow::before{ background: var(--frost); }
-  .process .section-head h2{ color: var(--frost); }
-  .process .section-head p{ color: var(--frost-70); }
+
+  .process .section-head .eyebrow{
+    color:var(--frost-55);
+  }
+
+  .process .section-head .eyebrow::before{
+    background:var(--frost);
+  }
+
+  .process .section-head h2{
+    color:var(--frost);
+  }
+
+  .process .section-head p{
+    color:var(--frost-70);
+  }
+
   .thread-line{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-top: 10px;
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    margin-top:10px;
   }
+
   .process .thread-line::before{
-    background: linear-gradient(90deg, var(--frost-30), var(--frost), var(--frost-30));
+    background:linear-gradient(
+      90deg,
+      var(--frost-30),
+      var(--frost),
+      var(--frost-30)
+    );
   }
+
   .thread-line::before{
     content:"";
-    position: absolute;
-    top: 11px;
-    left: 5.5%;
-    right: 5.5%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--mist), var(--navy), var(--mist));
+    position:absolute;
+    top:11px;
+    left:5.5%;
+    right:5.5%;
+    height:1px;
+    background:linear-gradient(
+      90deg,
+      var(--mist),
+      var(--navy),
+      var(--mist)
+    );
   }
+
   .thread-step{
-    position: relative;
-    padding-top: 44px;
-    padding-right: 26px;
+    position:relative;
+    padding-top:44px;
+    padding-right:26px;
   }
-  .thread-step:last-child{ padding-right: 0; }
+
+  .thread-step:last-child{
+    padding-right:0;
+  }
+
   .thread-step::before{
     content:"";
-    position: absolute;
-    top: 0; left: 0;
-    width: 11px; height: 11px;
-    border-radius: 50%;
-    background: var(--frost);
-    border: 2px solid var(--navy);
+    position:absolute;
+    top:0;
+    left:0;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--frost);
+    border:2px solid var(--navy);
   }
+
   .process .thread-step::before{
-    background: var(--navy);
-    border: 2px solid var(--frost);
+    background:var(--navy);
+    border:2px solid var(--frost);
   }
+
   .thread-num{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--steel-dark);
-    letter-spacing: 0.08em;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--steel-dark);
+    letter-spacing:0.08em;
   }
-  .process .thread-num{ color: var(--frost-70); }
+
+  .process .thread-num{
+    color:var(--frost-70);
+  }
+
   .thread-step h3{
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 1.3rem;
-    margin-top: 12px;
-    color: var(--ink);
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.3rem;
+    margin-top:12px;
+    color:var(--ink);
   }
-  .process .thread-step h3{ color: var(--frost); }
+
+  .process .thread-step h3{
+    color:var(--frost);
+  }
+
   .thread-step p{
-    margin-top: 10px;
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: var(--ink-70);
-    max-width: 240px;
+    margin-top:10px;
+    font-size:0.92rem;
+    line-height:1.55;
+    color:var(--ink-70);
+    max-width:240px;
   }
-  .process .thread-step p{ color: var(--frost-70); }
-  @media (max-width: 780px){
-    .thread-line{ grid-template-columns: 1fr; gap: 40px; }
-    .thread-line::before{ display:none; }
-    .thread-step{ padding-right: 0; }
+
+  .process .thread-step p{
+    color:var(--frost-70);
+  }
+
+  @media (max-width:780px){
+    .thread-line{
+      grid-template-columns:1fr;
+      gap:40px;
+    }
+
+    .thread-line::before{
+      display:none;
+    }
+
+    .thread-step{
+      padding-right:0;
+    }
   }
 
   /* ---------- studio ---------- */
-  .studio{ padding: 130px 0; background: var(--cream-tint); }
+
+  .studio{
+    padding:130px 0;
+    background:var(--cream-tint);
+  }
+
   .studio-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: start;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:start;
   }
-  @media (max-width: 780px){ .studio-grid{ grid-template-columns: 1fr; gap: 40px; } }
+
+  @media (max-width:780px){
+    .studio-grid{
+      grid-template-columns:1fr;
+      gap:40px;
+    }
+  }
+
   .studio p.body-text{
-    font-size: 1.02rem;
-    line-height: 1.75;
-    color: var(--ink-70);
+    font-size:1.02rem;
+    line-height:1.75;
+    color:var(--ink-70);
   }
-  .studio p.body-text + p.body-text{ margin-top: 18px; }
+
+  .studio p.body-text + p.body-text{
+    margin-top:18px;
+  }
+
   .pull{
-    border-left: 2px solid var(--navy);
-    padding-left: 26px;
+    border-left:2px solid var(--navy);
+    padding-left:26px;
   }
+
   .pull p{
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-    line-height: 1.4;
-    color: var(--ink);
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.3rem,2.4vw,1.7rem);
+    line-height:1.4;
+    color:var(--ink);
   }
 
   /* ---------- story ---------- */
-  .story{ padding: 130px 0; }
+
+  .story{
+    padding:130px 0;
+  }
+
   .story-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: start;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:start;
   }
-  @media (max-width: 780px){ .story-grid{ grid-template-columns: 1fr; gap: 40px; } }
+
+  @media (max-width:780px){
+    .story-grid{
+      grid-template-columns:1fr;
+      gap:40px;
+    }
+  }
+
   .story p.body-text{
-    font-size: 1.02rem;
-    line-height: 1.75;
-    color: var(--ink-70);
+    font-size:1.02rem;
+    line-height:1.75;
+    color:var(--ink-70);
   }
-  .story p.body-text + p.body-text{ margin-top: 18px; }
+
+  .story p.body-text + p.body-text{
+    margin-top:18px;
+  }
+
   .story-marks{
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
   }
-  .story-mark{ padding-left: 22px; border-left: 2px solid var(--mist); }
+
+  .story-mark{
+    padding-left:22px;
+    border-left:2px solid var(--mist);
+  }
+
   .story-mark .thread-num{
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    color: var(--steel-dark);
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--steel-dark);
   }
+
   .story-mark p{
-    margin-top: 8px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--ink-70);
+    margin-top:8px;
+    font-size:0.95rem;
+    line-height:1.6;
+    color:var(--ink-70);
   }
 
   /* ---------- cta ---------- */
+
   .cta{
-    background-color: #7d1a1a;
-    padding: 140px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    background-color:#7d1a1a;
+    padding:140px 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
   }
+
   .cta::before{
     content:"";
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    top: -280px; left: 50%; transform: translateX(-50%);
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    top:-280px;
+    left:50%;
+    transform:translateX(-50%);
   }
-  .cta-inner{ position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
-  .cta .eyebrow{ justify-content: center; color: var(--frost-55); }
-  .cta .eyebrow::before{ display:none; }
+
+  .cta-inner{
+    position:relative;
+    z-index:1;
+    max-width:620px;
+    margin:0 auto;
+  }
+
+  .cta .eyebrow{
+    justify-content:center;
+    color:var(--frost-55);
+  }
+
+  .cta .eyebrow::before{
+    display:none;
+  }
+
   .cta h2{
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    color: var(--frost);
-    line-height: 1.08;
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    color:var(--frost);
+    line-height:1.08;
   }
-  .cta h2 em{ font-style: italic; font-weight: 400; color: var(--frost); }
+
+  .cta h2 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--frost);
+  }
+
   .cta p{
-    margin-top: 20px;
-    font-size: 1.05rem;
-    color: var(--frost-70);
+    margin-top:20px;
+    font-size:1.05rem;
+    color:var(--frost-70);
   }
+
   .cta-actions{
-    margin-top: 38px;
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    margin-top:38px;
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
   }
 
   /* ---------- footer ---------- */
+
   .footer{
-    background: var(--navy-deep);
-    border-top: 1px solid rgba(239,230,221,0.09);
-    padding: 40px 0;
+    background:var(--navy-deep);
+    border-top:1px solid rgba(239,230,221,0.09);
+    padding:40px 0;
   }
+
   .footer .wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
   }
+
   .footer-brand{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.05em;
-    color: var(--frost-55);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.05em;
+    color:var(--frost-55);
   }
+
   .footer-links{
-    display: flex;
-    gap: 26px;
-    font-size: 0.82rem;
-    color: var(--frost-70);
+    display:flex;
+    gap:26px;
+    font-size:0.82rem;
+    color:var(--frost-70);
   }
-  .footer-links a:hover{ color: var(--frost); }
+
+  .footer-links a:hover{
+    color:var(--frost);
+  }
+
   .footer-social{
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.2s ease;
+    display:inline-flex;
+    align-items:center;
+    transition:color 0.2s ease;
   }
 
   /* ---------- reveal ---------- */
-  .reveal{
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    .reveal{ opacity: 1; transform: none; transition: none; }
-    .scroll-cue .line::after{ animation: none; }
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{
+      scroll-behavior:auto;
+    }
+
+    .reveal{
+      opacity:1;
+      transform:none;
+      transition:none;
+    }
+
+    .scroll-cue .line::after{
+      animation:none;
+    }
   }
 </style>
 </head>
+
 <body>
 
-  <header class="nav">
+<header class="nav">
+  <div class="wrap">
+
+    <a href="#" class="brand" aria-label="Cobwebs Design home">
+      <img src="logo.png" alt="Cobwebs Design logo" class="brand-logo">
+      Cobwebs
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#story">Our Story</a>
+      <a href="#studio">Studio</a>
+    </nav>
+
+    <a href="#contact" class="nav-cta">
+      Start a project
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <canvas id="web-canvas" aria-hidden="true"></canvas>
+
     <div class="wrap">
-      <a href="#" class="brand" aria-label="Cobwebs Design home">
-        <img src="logo.png" alt="Cobwebs Design logo" class="brand-logo">
-        Cobwebs
+
+      <div class="hero-inner">
+
+        <p class="eyebrow">
+          Web design &amp; development studio · Sunshine Coast
+        </p>
+
+        <h1>
+          We weave<br>
+          the <em>web.</em>
+        </h1>
+
+        <p class="lead">
+          Cobwebs Design builds websites with the same discipline as a web gets spun.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#contact" class="btn btn-primary">
+            Start a project
+          </a>
+
+          <a href="#services" class="btn btn-ghost-dark">
+            See services
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+
+  </section>
+
+
+  <!-- WAVE 1 -->
+
+  <section style="background-color:#820002; height:100px; line-height:0;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+      style="display:block; width:100%; height:100%;"
+    >
+      <path
+        d="M0,50 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z"
+        fill="#efe6dd"
+      />
+    </svg>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <p class="eyebrow">
+          Services
+        </p>
+
+        <h2>
+          Two things every site actually needs.
+        </h2>
+
+      </div>
+
+
+      <div class="service-grid reveal">
+
+        <div class="service">
+
+          <div class="service-icon">
+
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+
+              <rect
+                x="5"
+                y="4.5"
+                width="22"
+                height="23"
+                rx="2"
+                stroke="#9A0002"
+                stroke-width="1.4"
+              />
+
+              <line
+                x1="5"
+                y1="10.5"
+                x2="27"
+                y2="10.5"
+                stroke="#9A0002"
+                stroke-width="1.4"
+              />
+
+              <line
+                x1="9"
+                y1="16"
+                x2="23"
+                y2="16"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.2"
+              />
+
+              <line
+                x1="9"
+                y1="20"
+                x2="23"
+                y2="20"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.2"
+              />
+
+              <line
+                x1="9"
+                y1="24"
+                x2="17"
+                y2="24"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.2"
+              />
+
+            </svg>
+
+          </div>
+
+          <p class="thread-num">
+            01 — Pages
+          </p>
+
+          <h3>
+            Web page design and build
+          </h3>
+
+          <p class="service-copy">
+            We design and build the pages themselves. Structure, copy, layout, and code. The site loads fast, reads clearly, and holds together on any screen.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-icon">
+
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+
+              <circle
+                cx="16"
+                cy="16"
+                r="11.5"
+                stroke="#9A0002"
+                stroke-width="1.4"
+              />
+
+              <ellipse
+                cx="16"
+                cy="16"
+                rx="4.6"
+                ry="11.5"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.1"
+              />
+
+              <line
+                x1="4.5"
+                y1="16"
+                x2="27.5"
+                y2="16"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.1"
+              />
+
+              <path
+                d="M6.5 10.5C9.3 12.2 12.5 13 16 13C19.5 13 22.7 12.2 25.5 10.5"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.1"
+              />
+
+              <path
+                d="M6.5 21.5C9.3 19.8 12.5 19 16 19C19.5 19 22.7 19.8 25.5 21.5"
+                stroke="#9A0002"
+                stroke-opacity="0.4"
+                stroke-width="1.1"
+              />
+
+            </svg>
+
+          </div>
+
+          <p class="thread-num">
+            02 — Domain
+          </p>
+
+          <h3>
+            Domain setup and connection
+          </h3>
+
+          <p class="service-copy">
+            We register your domain, or move one you already own. Configure the DNS, and connect it to your new site, so it just works with no loose ends.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WAVE 2 -->
+
+  <section style="background-color:#efe6dd; height:100px; line-height:0;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+      style="display:block; width:100%; height:100%;"
+    >
+      <path
+        d="M0,50 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z"
+        fill="#9A0002"
+      />
+    </svg>
+  </section>
+
+
+  <!-- PROCESS -->
+
+  <section class="process" id="process">
+
+    <canvas
+      class="process-ripple-canvas"
+      aria-hidden="true"
+    ></canvas>
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <p class="eyebrow">
+          How a site gets built
+        </p>
+
+        <h2>
+          Every project follows the same four strands.
+        </h2>
+
+        <p>
+          No template process dressed up in new labels. This is the actual order we work in, and why each stage exists before the next one starts.
+        </p>
+
+      </div>
+
+
+      <div class="thread-line reveal">
+
+        <div class="thread-step">
+
+          <p class="thread-num">
+            01 — Spin
+          </p>
+
+          <h3>
+            Discovery
+          </h3>
+
+          <p>
+            We map the structure. Content, users, constraints, before a single pixel appears.
+          </p>
+
+        </div>
+
+
+        <div class="thread-step">
+
+          <p class="thread-num">
+            02 — Weave
+          </p>
+
+          <h3>
+            Design
+          </h3>
+
+          <p>
+            Interfaces built thread by thread, tested against your real content, not placeholder text.
+          </p>
+
+        </div>
+
+
+        <div class="thread-step">
+
+          <p class="thread-num">
+            03 — Anchor
+          </p>
+
+          <h3>
+            Build
+          </h3>
+
+          <p>
+            Clean, fast, maintainable code, built to hold weight under real traffic, not just at launch.
+          </p>
+
+        </div>
+
+
+        <div class="thread-step">
+
+          <p class="thread-num">
+            04 — Publish
+          </p>
+
+          <h3>
+            Launch
+          </h3>
+
+          <p>
+            We set up the site, and make it easily accessible for users.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WAVE 3 -->
+
+  <section style="background-color:#9A0002; height:100px; line-height:0;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+      style="display:block; width:100%; height:100%;"
+    >
+      <path
+        d="M0,50 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z"
+        fill="#efe6dd"
+      />
+    </svg>
+  </section>
+
+
+  <!-- STORY -->
+
+  <section class="story" id="story">
+
+    <div class="wrap">
+
+      <div class="section-head reveal">
+
+        <p class="eyebrow">
+          Our Story
+        </p>
+
+        <h2>
+          Three friends, one shared thread.
+        </h2>
+
+        <p>
+          How Cobwebs Design came to be, and the foundation it was built upon.
+        </p>
+
+      </div>
+
+
+      <div class="story-grid reveal">
+
+        <div>
+
+          <p class="body-text">
+            We have established Cobwebs Design as three friends who came together in pursuit of a shared business ambition. We've each studied design and applied digital technologies, we developed a working proficiency in a range of coding languages, including but not limited to Lua, Python, HTML, PHP, JavaScript, C#, Python and CSS.
+          </p>
+
+          <p class="body-text">
+            Recognising that our combined knowledge was sufficient to design and build websites to a professional standard, we have resolved to formalise this capability into a business of our own. It was this genuine passion for coding, paired with a shared enjoyment of website design and creation, that provided the foundation upon which Cobwebs Design was formed.
+          </p>
+
+        </div>
+
+
+        <div class="story-marks">
+
+          <div class="story-mark">
+
+            <p class="thread-num">
+              01 — Foundations
+            </p>
+
+            <p>
+              A shared background in design and applied digital technologies.
+            </p>
+
+          </div>
+
+
+          <div class="story-mark">
+
+            <p class="thread-num">
+              02 — Craft
+            </p>
+
+            <p>
+              Proficiency built across several coding languages, applied with care to real projects.
+            </p>
+
+          </div>
+
+
+          <div class="story-mark">
+
+            <p class="thread-num">
+              03 — Founding
+            </p>
+
+            <p>
+              A shared passion for coding and design formalised into Cobwebs Design.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WAVE 4 -->
+
+  <section style="background-color:#efe6dd; height:100px; line-height:0;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+      style="display:block; width:100%; height:100%;"
+    >
+      <path
+        d="M0,50 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z"
+        fill="#E6D7C7"
+      />
+    </svg>
+  </section>
+
+
+  <!-- STUDIO -->
+
+  <section class="studio" id="studio">
+
+    <div class="wrap">
+
+      <div class="studio-grid">
+
+        <div class="reveal">
+
+          <p class="eyebrow">
+            Studio
+          </p>
+
+          <h2
+            style="
+              font-family:var(--serif);
+              font-weight:400;
+              font-size:clamp(1.7rem,3.2vw,2.3rem);
+              line-height:1.25;
+              margin-top:18px;
+            "
+          >
+            Built like a good web. Nothing wasted, nothing missing.
+          </h2>
+
+          <p
+            class="body-text"
+            style="margin-top:24px;"
+          >
+            Cobwebs Design is a small studio based on the Sunshine Coast. We work with founders and small teams who need a site that loads fast, reads clearly, and holds up under real traffic — not just a portfolio piece for launch day.
+          </p>
+
+          <p class="body-text">
+            We keep the client list short on purpose. Fewer projects at once means every strand gets proper tension, and every site gets the attention it was actually paid for.
+          </p>
+
+        </div>
+
+
+        <div class="reveal pull">
+
+          <p>
+            "A website is only as strong as the structure nobody sees. We spend most of our time there."
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WAVE 5 -->
+
+  <section style="background-color:#E6D7C7; height:100px; line-height:0;">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+      style="display:block; width:100%; height:100%;"
+    >
+      <path
+        d="M0,50 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z"
+        fill="#7D1A1A"
+      />
+    </svg>
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta" id="contact">
+
+    <div class="wrap">
+
+      <div class="cta-inner reveal">
+
+        <p class="eyebrow">
+          Get in touch
+        </p>
+
+        <h2>
+          Let's start <em>weaving.</em>
+        </h2>
+
+        <p>
+          Tell us what you're building, we reply within two working days, with next steps, not a sales call.
+        </p>
+
+        <div class="cta-actions">
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@cobwebs.design&su=New%20project%20enquiry"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+          >
+            Email the studio
+          </a>
+
+          <a
+            href="#services"
+            class="btn btn-ghost-dark"
+          >
+            See our services
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="wrap">
+
+    <div class="footer-brand">
+
+      <img
+        src="logo.png"
+        alt="Cobwebs Design logo"
+        class="footer-logo"
+      >
+
+      COBWEBS DESIGN · SUNSHINE COAST, AU · © 2026
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#story">Our Story</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact">Contact</a>
+
+      <a
+        href="https://instagram.com/cob.websdesign"
+        target="_blank"
+        rel="noopener"
+        aria-label="Cobwebs Design on Instagram"
+        class="footer-social"
+      >
+
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+
+          <rect
+            x="2.5"
+            y="2.5"
+            width="19"
+            height="19"
+            rx="5"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4.4"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+
+          <circle
+            cx="17.4"
+            cy="6.6"
+            r="1.15"
+            fill="currentColor"
+          />
+
+        </svg>
+
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#story">Our Story</a>
-        <a href="#studio">Studio</a>
-      </nav>
-      <a href="#contact" class="nav-cta">Start a project</a>
+
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <canvas id="web-canvas" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <div class="hero-inner">
-          <p class="eyebrow">Web design &amp; development studio · Sunshine Coast</p>
-          <h1>We weave<br>the <em>web.</em></h1>
-          <p class="lead">Cobwebs Design builds websites with the same discipline as a web gets spun.</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Start a project</a>
-            <a href="#services" class="btn btn-ghost-dark">See services</a>
-          </div>
-        </div>
-      </div>
+  </div>
 
-      <div class="scroll-cue" aria-hidden="true">
-        <span>Scroll</span>
-        <span class="line"></span>
-      </div>
-    </section>
+</footer>
 
-    <section style="background-color: #820002; height:100px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#efe6dd"/>
-        </svg>
-    </section>
-
-    <section class="services" id="services">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Services</p>
-          <h2>Two things every site actually needs.</h2>
-        </div>
-
-        <div class="service-grid reveal">
-          <div class="service">
-            <div class="service-icon">
-              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="5" y="4.5" width="22" height="23" rx="2" stroke="#9A0002" stroke-width="1.4"/>
-                <line x1="5" y1="10.5" x2="27" y2="10.5" stroke="#9A0002" stroke-width="1.4"/>
-                <line x1="9" y1="16" x2="23" y2="16" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.2"/>
-                <line x1="9" y1="20" x2="23" y2="20" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.2"/>
-                <line x1="9" y1="24" x2="17" y2="24" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.2"/>
-              </svg>
-            </div>
-            <p class="thread-num">01 — Pages</p>
-            <h3>Web page design and build</h3>
-            <p class="service-copy">We design and build the pages themselves. Structure, copy, layout, and code. The site loads fast, reads clearly, and holds together on any screen.</p>
-          </div>
-
-          <div class="service">
-            <div class="service-icon">
-              <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="16" cy="16" r="11.5" stroke="#9A0002" stroke-width="1.4"/>
-                <ellipse cx="16" cy="16" rx="4.6" ry="11.5" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.1"/>
-                <line x1="4.5" y1="16" x2="27.5" y2="16" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.1"/>
-                <path d="M6.5 10.5C9.3 12.2 12.5 13 16 13C19.5 13 22.7 12.2 25.5 10.5" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.1"/>
-                <path d="M6.5 21.5C9.3 19.8 12.5 19 16 19C19.5 19 22.7 19.8 25.5 21.5" stroke="#9A0002" stroke-opacity="0.4" stroke-width="1.1"/>
-              </svg>
-            </div>
-            <p class="thread-num">02 — Domain</p>
-            <h3>Domain setup and connection</h3>
-            <p class="service-copy">We register your domain, or move one you already own. Configure the DNS, and connect it to your new site, so it just works with no loose ends.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background-color: #efe6dd; height:100px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#9A0002"/>
-        </svg>
-    </section>
-
-    <section class="process" id="process">
-      <canvas class="process-ripple-canvas" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">How a site gets built</p>
-          <h2>Every project follows the same four strands.</h2>
-          <p>No template process dressed up in new labels. This is the actual order we work in, and why each stage exists before the next one starts.</p>
-        </div>
-
-        <div class="thread-line reveal">
-          <div class="thread-step">
-            <p class="thread-num">01 — Spin</p>
-            <h3>Discovery</h3>
-            <p>We map the structure. Content, users, constraints, before a single pixel appears.</p>
-          </div>
-          <div class="thread-step">
-            <p class="thread-num">02 — Weave</p>
-            <h3>Design</h3>
-            <p>Interfaces built thread by thread, tested against your real content, not placeholder text.</p>
-          </div>
-          <div class="thread-step">
-            <p class="thread-num">03 — Anchor</p>
-            <h3>Build</h3>
-            <p>Clean, fast, maintainable code, built to hold weight under real traffic, not just at launch.</p>
-          </div>
-          <div class="thread-step">
-            <p class="thread-num">04 — Publish</p>
-            <h3>Launch</h3>
-            <p>We set up the site, and make it easily accessible for users.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background-color: #9A0002; height:100px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#efe6dd"/>
-        </svg>
-    </section>
-
-    <section class="story" id="story">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Our Story</p>
-          <h2>Three friends, one shared thread.</h2>
-          <p>How Cobwebs Design came to be, and the foundation it was built upon.</p>
-        </div>
-
-        <div class="story-grid reveal">
-          <div>
-            <p class="body-text">We have established Cobwebs Design as three friends who came together in pursuit of a shared business ambition. We've each studied design and applied digital technologies, we developed a working proficiency in a range of coding languages, including but not limited to Lua, Python, HTML, PHP, JavaScript, C#, Python and CSS.</p>
-            <p class="body-text">Recognising that our combined knowledge was sufficient to design and build websites to a professional standard, we have resolved to formalise this capability into a business of our own. It was this genuine passion for coding, paired with a shared enjoyment of website design and creation, that provided the foundation upon which Cobwebs Design was formed.</p>
-          </div>
-          <div class="story-marks">
-            <div class="story-mark">
-              <p class="thread-num">01 — Foundations</p>
-              <p>A shared background in design and applied digital technologies.</p>
-            </div>
-            <div class="story-mark">
-              <p class="thread-num">02 — Craft</p>
-              <p>Proficiency built across several coding languages, applied with care to real projects.</p>
-            </div>
-            <div class="story-mark">
-              <p class="thread-num">03 — Founding</p>
-              <p>A shared passion for coding and design formalised into Cobwebs Design.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background-color: #efe6dd; height:100px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#E6D7C7"/>
-        </svg>
-    </section>
-
-    <section class="studio" id="studio">
-      <div class="wrap">
-        <div class="studio-grid">
-          <div class="reveal">
-            <p class="eyebrow">Studio</p>
-            <h2 style="font-family:var(--serif); font-weight:400; font-size:clamp(1.7rem,3.2vw,2.3rem); line-height:1.25; margin-top:18px;">Built like a good web. Nothing wasted, nothing missing.</h2>
-            <p class="body-text" style="margin-top:24px;">Cobwebs Design is a small studio based on the Sunshine Coast. We work with founders and small teams who need a site that loads fast, reads clearly, and holds up under real traffic — not just a portfolio piece for launch day.</p>
-            <p class="body-text">We keep the client list short on purpose. Fewer projects at once means every strand gets proper tension, and every site gets the attention it was actually paid for.</p>
-          </div>
-          <div class="reveal pull">
-            <p>"A website is only as strong as the structure nobody sees. We spend most of our time there."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section style="background-color: #E6D7C7; height:100px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#7D1A1A"/>
-        </svg>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="wrap">
-        <div class="cta-inner reveal">
-          <p class="eyebrow">Get in touch</p>
-          <h2>Let's start <em>weaving.</em></h2>
-          <p>Tell us what you're building, we reply within two working days, with next steps, not a sales call.</p>
-          <div class="cta-actions">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@cobwebs.design&su=New%20project%20enquiry" target="_blank" rel="noopener" class="btn btn-primary">Email the studio</a>
-            <a href="#services" class="btn btn-ghost-dark">See our services</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-brand">
-        <img src="logo.png" alt="Cobwebs Design logo" class="footer-logo">
-        COBWEBS DESIGN · SUNSHINE COAST, AU · © 2026
-      </div>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#story">Our Story</a>
-        <a href="#studio">Studio</a>
-        <a href="#contact">Contact</a>
-        <a href="https://instagram.com/cob.websdesign" target="_blank" rel="noopener" aria-label="Cobwebs Design on Instagram" class="footer-social">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="12" cy="12" r="4.4" stroke="currentColor" stroke-width="1.6"/>
-            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
 
 <script>
+
   // ---------- scroll reveal ----------
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const reduced = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
   if(!reduced){
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('is-visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+
+    const io = new IntersectionObserver(
+      (entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      {
+        threshold:0.15
+      }
+    );
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach(el=>io.observe(el));
+
+  }else{
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach(el=>el.classList.add('is-visible'));
+
   }
 
+
   // ---------- hero thread network ----------
+
   (function(){
-    const canvas = document.getElementById('web-canvas');
-    const ctx = canvas.getContext('2d');
-    const hero = document.querySelector('.hero');
-    let w, h, nodes, mouse = { x: -9999, y: -9999, active: false };
+
+    const canvas =
+      document.getElementById('web-canvas');
+
+    const ctx =
+      canvas.getContext('2d');
+
+    const hero =
+      document.querySelector('.hero');
+
+    let w,
+        h,
+        nodes,
+        mouse = {
+          x:-9999,
+          y:-9999,
+          active:false
+        };
+
 
     function resize(){
-      const rect = hero.getBoundingClientRect();
-      w = canvas.width = rect.width * devicePixelRatio;
-      h = canvas.height = rect.height * devicePixelRatio;
-      canvas.style.width = rect.width + 'px';
-      canvas.style.height = rect.height + 'px';
-      ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
-      buildNodes(rect.width, rect.height);
+
+      const rect =
+        hero.getBoundingClientRect();
+
+      w =
+        canvas.width =
+        rect.width * devicePixelRatio;
+
+      h =
+        canvas.height =
+        rect.height * devicePixelRatio;
+
+      canvas.style.width =
+        rect.width + 'px';
+
+      canvas.style.height =
+        rect.height + 'px';
+
+      ctx.setTransform(
+        devicePixelRatio,
+        0,
+        0,
+        devicePixelRatio,
+        0,
+        0
+      );
+
+      buildNodes(
+        rect.width,
+        rect.height
+      );
+
     }
 
-    function buildNodes(cw, ch){
-      const density = Math.max(18, Math.min(46, Math.floor((cw*ch)/26000)));
+
+    function buildNodes(cw,ch){
+
+      const density =
+        Math.max(
+          18,
+          Math.min(
+            46,
+            Math.floor(
+              (cw * ch) / 26000
+            )
+          )
+        );
+
       nodes = [];
-      for(let i=0;i<density;i++){
+
+      for(
+        let i = 0;
+        i < density;
+        i++
+      ){
+
         nodes.push({
-          x: Math.random()*cw,
-          y: Math.random()*ch,
-          vx: (Math.random()-0.5)*0.18,
-          vy: (Math.random()-0.5)*0.18,
-          r: Math.random()*1.6 + 1.2
+
+          x:
+            Math.random() * cw,
+
+          y:
+            Math.random() * ch,
+
+          vx:
+            (Math.random() - 0.5) * 0.18,
+
+          vy:
+            (Math.random() - 0.5) * 0.18,
+
+          r:
+            Math.random() * 1.6 + 1.2
+
         });
+
       }
+
     }
+
 
     const maxDist = 150;
     const maxDistMouse = 210;
 
+
     function step(){
-      const cw = canvas.width / devicePixelRatio;
-      const ch = canvas.height / devicePixelRatio;
-      ctx.clearRect(0,0,cw,ch);
+
+      const cw =
+        canvas.width /
+        devicePixelRatio;
+
+      const ch =
+        canvas.height /
+        devicePixelRatio;
+
+      ctx.clearRect(
+        0,
+        0,
+        cw,
+        ch
+      );
+
 
       // update
+
       for(const n of nodes){
-        n.x += n.vx; n.y += n.vy;
-        if(n.x < 0 || n.x > cw) n.vx *= -1;
-        if(n.y < 0 || n.y > ch) n.vy *= -1;
+
+        n.x += n.vx;
+        n.y += n.vy;
+
+        if(
+          n.x < 0 ||
+          n.x > cw
+        ){
+          n.vx *= -1;
+        }
+
+        if(
+          n.y < 0 ||
+          n.y > ch
+        ){
+          n.vy *= -1;
+        }
+
       }
+
 
       // edges
-      for(let i=0;i<nodes.length;i++){
-        for(let j=i+1;j<nodes.length;j++){
-          const a = nodes[i], b = nodes[j];
-          const dx = a.x-b.x, dy = a.y-b.y;
-          const dist = Math.sqrt(dx*dx+dy*dy);
+
+      for(
+        let i = 0;
+        i < nodes.length;
+        i++
+      ){
+
+        for(
+          let j = i + 1;
+          j < nodes.length;
+          j++
+        ){
+
+          const a = nodes[i];
+          const b = nodes[j];
+
+          const dx =
+            a.x - b.x;
+
+          const dy =
+            a.y - b.y;
+
+          const dist =
+            Math.sqrt(
+              dx * dx +
+              dy * dy
+            );
+
+
           if(dist < maxDist){
-            const alpha = (1 - dist/maxDist) * 0.35;
-            ctx.strokeStyle = `rgba(239,230,221,${alpha})`;
+
+            const alpha =
+              (1 - dist / maxDist) *
+              0.35;
+
+            ctx.strokeStyle =
+              `rgba(239,230,221,${alpha})`;
+
             ctx.lineWidth = 0.7;
+
             ctx.beginPath();
-            ctx.moveTo(a.x,a.y);
-            ctx.lineTo(b.x,b.y);
+
+            ctx.moveTo(
+              a.x,
+              a.y
+            );
+
+            ctx.lineTo(
+              b.x,
+              b.y
+            );
+
             ctx.stroke();
+
           }
+
         }
+
+
         // mouse thread
+
         if(mouse.active){
-          const dx = nodes[i].x-mouse.x, dy = nodes[i].y-mouse.y;
-          const dist = Math.sqrt(dx*dx+dy*dy);
+
+          const dx =
+            nodes[i].x -
+            mouse.x;
+
+          const dy =
+            nodes[i].y -
+            mouse.y;
+
+          const dist =
+            Math.sqrt(
+              dx * dx +
+              dy * dy
+            );
+
+
           if(dist < maxDistMouse){
-            const alpha = (1 - dist/maxDistMouse) * 0.85;
-            ctx.strokeStyle = `rgba(239,230,221,${alpha})`;
+
+            const alpha =
+              (1 - dist / maxDistMouse) *
+              0.85;
+
+            ctx.strokeStyle =
+              `rgba(239,230,221,${alpha})`;
+
             ctx.lineWidth = 0.9;
+
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
+
+            ctx.moveTo(
+              nodes[i].x,
+              nodes[i].y
+            );
+
+            ctx.lineTo(
+              mouse.x,
+              mouse.y
+            );
+
             ctx.stroke();
+
           }
+
         }
+
       }
+
 
       // nodes
+
       for(const n of nodes){
+
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(239,230,221,0.55)';
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+
+        ctx.fillStyle =
+          'rgba(239,230,221,0.55)';
+
+        ctx.arc(
+          n.x,
+          n.y,
+          n.r,
+          0,
+          Math.PI * 2
+        );
+
         ctx.fill();
+
       }
 
-      if(!reduced) requestAnimationFrame(step);
+
+      if(!reduced){
+
+        requestAnimationFrame(step);
+
+      }
+
     }
 
-    hero.addEventListener('mousemove', (e)=>{
-      const rect = hero.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
-    });
-    hero.addEventListener('mouseleave', ()=>{ mouse.active = false; });
 
-    window.addEventListener('resize', resize);
+    hero.addEventListener(
+      'mousemove',
+      (e)=>{
+
+        const rect =
+          hero.getBoundingClientRect();
+
+        mouse.x =
+          e.clientX -
+          rect.left;
+
+        mouse.y =
+          e.clientY -
+          rect.top;
+
+        mouse.active = true;
+
+      }
+    );
+
+
+    hero.addEventListener(
+      'mouseleave',
+      ()=>{
+        mouse.active = false;
+      }
+    );
+
+
+    window.addEventListener(
+      'resize',
+      resize
+    );
+
     resize();
     step();
+
   })();
 
-  // ---------- process section: water-droplet ripples ----------
-  (function(){
-    const section = document.getElementById('process');
-    const canvas = section && section.querySelector('.process-ripple-canvas');
-    if(!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    let w = 0, h = 0, dpr = 1;
+  // ---------- process section: water-droplet ripples ----------
+
+  (function(){
+
+    const section =
+      document.getElementById('process');
+
+    const canvas =
+      section &&
+      section.querySelector(
+        '.process-ripple-canvas'
+      );
+
+    if(!canvas) return;
+
+    const ctx =
+      canvas.getContext('2d');
+
+    const reduced =
+      window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+
+    let w = 0,
+        h = 0,
+        dpr = 1;
+
+
     function resize(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = section.clientWidth;
-      h = section.clientHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      dpr =
+        Math.min(
+          window.devicePixelRatio || 1,
+          2
+        );
+
+      w =
+        section.clientWidth;
+
+      h =
+        section.clientHeight;
+
+      canvas.width =
+        w * dpr;
+
+      canvas.height =
+        h * dpr;
+
+      canvas.style.width =
+        w + 'px';
+
+      canvas.style.height =
+        h + 'px';
+
+      ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+      );
+
     }
+
 
     const ripples = [];
 
+
     function spawnRipple(){
-      // random spot anywhere within the section, including near/off the edges
-      const x = Math.random() * w;
-      const y = Math.random() * h;
-      // grow large enough that rings travel well past the section's bounds
-      const maxR = Math.max(w, h) * 0.9 + 200;
+
+      const x =
+        Math.random() * w;
+
+      const y =
+        Math.random() * h;
+
+      const maxR =
+        Math.max(w,h) *
+        0.9 +
+        200;
+
+
       ripples.push({
-        x, y, maxR,
-        start: performance.now(),
-        duration: 3200 + Math.random() * 1400, // ms
-        rings: 3,
-        strength: 0.55 + Math.random() * 0.3
+
+        x,
+        y,
+        maxR,
+
+        start:
+          performance.now(),
+
+        duration:
+          3200 +
+          Math.random() * 1400,
+
+        rings:3,
+
+        strength:
+          0.55 +
+          Math.random() * 0.3
+
       });
+
     }
+
 
     function scheduleNext(){
-      const delay = 1000 + Math.random() * 4000; // every 1-5s
+
+      const delay =
+        1000 +
+        Math.random() * 4000;
+
       setTimeout(()=>{
+
         spawnRipple();
         scheduleNext();
-      }, delay);
+
+      },delay);
+
     }
+
 
     function draw(now){
-      ctx.clearRect(0, 0, w, h);
 
-      for(let i = ripples.length - 1; i >= 0; i--){
-        const r = ripples[i];
-        const t = (now - r.start) / r.duration;
-        if(t >= 1){ ripples.splice(i, 1); continue; }
+      ctx.clearRect(
+        0,
+        0,
+        w,
+        h
+      );
 
-        // ease-out expansion, like a droplet's shockwave slowing as it spreads
-        const ease = 1 - Math.pow(1 - t, 3);
 
-        for(let ring = 0; ring < r.rings; ring++){
-          const ringOffset = ring * 0.16;
-          const ringT = Math.max(0, ease - ringOffset);
-          if(ringT <= 0) continue;
-          const radius = ringT * r.maxR;
-          const fade = Math.max(0, 1 - t - ringOffset * 0.5);
-          const alpha = fade * r.strength * (1 - ring * 0.22);
-          if(alpha <= 0.01) continue;
+      for(
+        let i = ripples.length - 1;
+        i >= 0;
+        i--
+      ){
+
+        const r =
+          ripples[i];
+
+        const t =
+          (now - r.start) /
+          r.duration;
+
+
+        if(t >= 1){
+
+          ripples.splice(
+            i,
+            1
+          );
+
+          continue;
+
+        }
+
+
+        // ease-out expansion
+
+        const ease =
+          1 -
+          Math.pow(
+            1 - t,
+            3
+          );
+
+
+        for(
+          let ring = 0;
+          ring < r.rings;
+          ring++
+        ){
+
+          const ringOffset =
+            ring * 0.16;
+
+          const ringT =
+            Math.max(
+              0,
+              ease - ringOffset
+            );
+
+
+          if(ringT <= 0)
+            continue;
+
+
+          const radius =
+            ringT * r.maxR;
+
+
+          const fade =
+            Math.max(
+              0,
+              1 -
+              t -
+              ringOffset * 0.5
+            );
+
+
+          const alpha =
+            fade *
+            r.strength *
+            (1 - ring * 0.22);
+
+
+          if(alpha <= 0.01)
+            continue;
+
 
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(239,230,221,${alpha.toFixed(3)})`;
-          ctx.lineWidth = Math.max(0.6, 2.2 * (1 - ringT * 0.7));
-          ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
+
+          ctx.strokeStyle =
+            `rgba(239,230,221,${alpha.toFixed(3)})`;
+
+          ctx.lineWidth =
+            Math.max(
+              0.6,
+              2.2 *
+              (1 - ringT * 0.7)
+            );
+
+          ctx.arc(
+            r.x,
+            r.y,
+            radius,
+            0,
+            Math.PI * 2
+          );
+
           ctx.stroke();
+
         }
 
-        // small bright flash at the point of impact
+
+        // small bright flash
+
         if(t < 0.18){
-          const flashAlpha = (1 - t / 0.18) * 0.5 * r.strength;
+
+          const flashAlpha =
+            (1 - t / 0.18) *
+            0.5 *
+            r.strength;
+
           ctx.beginPath();
-          ctx.fillStyle = `rgba(239,230,221,${flashAlpha.toFixed(3)})`;
-          ctx.arc(r.x, r.y, 3.5, 0, Math.PI * 2);
+
+          ctx.fillStyle =
+            `rgba(239,230,221,${flashAlpha.toFixed(3)})`;
+
+          ctx.arc(
+            r.x,
+            r.y,
+            3.5,
+            0,
+            Math.PI * 2
+          );
+
           ctx.fill();
+
         }
+
       }
 
+
       requestAnimationFrame(draw);
+
     }
+
 
     resize();
-    window.addEventListener('resize', resize);
+
+    window.addEventListener(
+      'resize',
+      resize
+    );
+
 
     if(reduced){
-      // respect reduced-motion: draw a single static soft ripple, no animation loop
+
       spawnRipple();
-      ctx.clearRect(0, 0, w, h);
-    } else {
+
+      ctx.clearRect(
+        0,
+        0,
+        w,
+        h
+      );
+
+    }else{
+
       requestAnimationFrame(draw);
-      // first ripple arrives a little sooner so the effect is noticed
-      setTimeout(spawnRipple, 900);
+
+      setTimeout(
+        spawnRipple,
+        900
+      );
+
       scheduleNext();
+
     }
+
   })();
+
 </script>
 
 </body>
 </html>
+```
