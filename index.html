@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cobwebs Design</title>
 <meta name="description" content="Cobwebs Design is a Sunshine Coast-based web design and development studio. We weave fast, precise, considered websites.">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,340;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -103,6 +105,21 @@
     color: var(--frost);
   }
   .brand svg{ width: 22px; height: 22px; flex-shrink: 0; }
+  .brand-logo{
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    object-fit: contain;
+    /* logo artwork is black line-art; this recolors it to the cream nav tone */
+    filter: brightness(0) invert(1);
+  }
+  .footer-logo{
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
   .nav-links{
     display: flex;
     align-items: center;
@@ -318,14 +335,37 @@
 
   /* ---------- process ---------- */
   .process{
+    position: relative;
     padding: 120px 0 140px;
+    background: var(--navy);
+    overflow: hidden;
+    isolation: isolate;
   }
+  .process-ripple-canvas{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .process .wrap{
+    position: relative;
+    z-index: 1;
+  }
+  .process .section-head .eyebrow{ color: var(--frost-55); }
+  .process .section-head .eyebrow::before{ background: var(--frost); }
+  .process .section-head h2{ color: var(--frost); }
+  .process .section-head p{ color: var(--frost-70); }
   .thread-line{
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
     margin-top: 10px;
+  }
+  .process .thread-line::before{
+    background: linear-gradient(90deg, var(--frost-30), var(--frost), var(--frost-30));
   }
   .thread-line::before{
     content:"";
@@ -351,12 +391,17 @@
     background: var(--frost);
     border: 2px solid var(--navy);
   }
+  .process .thread-step::before{
+    background: var(--navy);
+    border: 2px solid var(--frost);
+  }
   .thread-num{
     font-family: var(--mono);
     font-size: 0.72rem;
     color: var(--steel-dark);
     letter-spacing: 0.08em;
   }
+  .process .thread-num{ color: var(--frost-70); }
   .thread-step h3{
     font-family: var(--serif);
     font-weight: 500;
@@ -364,6 +409,7 @@
     margin-top: 12px;
     color: var(--ink);
   }
+  .process .thread-step h3{ color: var(--frost); }
   .thread-step p{
     margin-top: 10px;
     font-size: 0.92rem;
@@ -371,6 +417,7 @@
     color: var(--ink-70);
     max-width: 240px;
   }
+  .process .thread-step p{ color: var(--frost-70); }
   @media (max-width: 780px){
     .thread-line{ grid-template-columns: 1fr; gap: 40px; }
     .thread-line::before{ display:none; }
@@ -405,9 +452,43 @@
     color: var(--ink);
   }
 
+  /* ---------- story ---------- */
+  .story{ padding: 130px 0; }
+  .story-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+  @media (max-width: 780px){ .story-grid{ grid-template-columns: 1fr; gap: 40px; } }
+  .story p.body-text{
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-70);
+  }
+  .story p.body-text + p.body-text{ margin-top: 18px; }
+  .story-marks{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .story-mark{ padding-left: 22px; border-left: 2px solid var(--mist); }
+  .story-mark .thread-num{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--steel-dark);
+  }
+  .story-mark p{
+    margin-top: 8px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-70);
+  }
+
   /* ---------- cta ---------- */
   .cta{
-    background: var(--navy-deep);
+    background-color: #7d1a1a;
     padding: 140px 0;
     text-align: center;
     position: relative;
@@ -418,7 +499,6 @@
     position: absolute;
     width: 600px; height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(239,230,221,0.12) 0%, transparent 70%);
     top: -280px; left: 50%; transform: translateX(-50%);
   }
   .cta-inner{ position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
@@ -474,6 +554,11 @@
     color: var(--frost-70);
   }
   .footer-links a:hover{ color: var(--frost); }
+  .footer-social{
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+  }
 
   /* ---------- reveal ---------- */
   .reveal{
@@ -495,16 +580,13 @@
   <header class="nav">
     <div class="wrap">
       <a href="#" class="brand" aria-label="Cobwebs Design home">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="1.6" fill="#EFE6DD"/>
-          <path d="M12 12L12 2.5M12 12L20.5 7M12 12L20.5 17M12 12L12 21.5M12 12L3.5 17M12 12L3.5 7" stroke="#EFE6DD" stroke-width="1.1" stroke-linecap="round" stroke-opacity="0.9"/>
-          <path d="M8.2 6.4L15.8 6.4M18.6 15.2L18.6 8.8M15.8 17.6L8.2 17.6M5.4 8.8L5.4 15.2" stroke="#EFE6DD" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
-        </svg>
+        <img src="logo.png" alt="Cobwebs Design logo" class="brand-logo">
         Cobwebs
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
+        <a href="#story">Our Story</a>
         <a href="#studio">Studio</a>
       </nav>
       <a href="#contact" class="nav-cta">Start a project</a>
@@ -518,17 +600,24 @@
         <div class="hero-inner">
           <p class="eyebrow">Web design &amp; development studio · Sunshine Coast</p>
           <h1>We weave<br>the <em>web.</em></h1>
-          <p class="lead">Cobwebs Design builds websites with the same discipline as a web gets spun — every thread load-bearing, every strand exactly where it needs to be, nothing left to gather dust.</p>
+          <p class="lead">Cobwebs Design builds websites with the same discipline as a web gets spun.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Start a project</a>
             <a href="#services" class="btn btn-ghost-dark">See services</a>
           </div>
         </div>
       </div>
+
       <div class="scroll-cue" aria-hidden="true">
         <span>Scroll</span>
         <span class="line"></span>
       </div>
+    </section>
+
+    <section style="background-color: #820002; height:100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#efe6dd"/>
+        </svg>
     </section>
 
     <section class="services" id="services">
@@ -536,7 +625,6 @@
         <div class="section-head reveal">
           <p class="eyebrow">Services</p>
           <h2>Two things every site actually needs.</h2>
-          <p>We keep the offering simple — the site itself, and the domain that points people to it.</p>
         </div>
 
         <div class="service-grid reveal">
@@ -551,8 +639,8 @@
               </svg>
             </div>
             <p class="thread-num">01 — Pages</p>
-            <h3>Web page design &amp; build</h3>
-            <p class="service-copy">We design and build the pages themselves — structure, copy, layout, and code — so the site loads fast, reads clearly, and holds together on any screen.</p>
+            <h3>Web page design and build</h3>
+            <p class="service-copy">We design and build the pages themselves. Structure, copy, layout, and code. The site loads fast, reads clearly, and holds together on any screen.</p>
           </div>
 
           <div class="service">
@@ -566,26 +654,33 @@
               </svg>
             </div>
             <p class="thread-num">02 — Domain</p>
-            <h3>Domain setup &amp; connection</h3>
-            <p class="service-copy">We register your domain — or move one you already own — configure the DNS, and connect it to your new site, so it just works with no loose ends.</p>
+            <h3>Domain setup and connection</h3>
+            <p class="service-copy">We register your domain, or move one you already own. Configure the DNS, and connect it to your new site, so it just works with no loose ends.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section style="background-color: #efe6dd; height:100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#9A0002"/>
+        </svg>
+    </section>
+
     <section class="process" id="process">
+      <canvas class="process-ripple-canvas" aria-hidden="true"></canvas>
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">How a site gets built</p>
           <h2>Every project follows the same four strands.</h2>
-          <p>No template process dressed up in new labels — this is the actual order we work in, and why each stage exists before the next one starts.</p>
+          <p>No template process dressed up in new labels. This is the actual order we work in, and why each stage exists before the next one starts.</p>
         </div>
 
         <div class="thread-line reveal">
           <div class="thread-step">
             <p class="thread-num">01 — Spin</p>
             <h3>Discovery</h3>
-            <p>We map the structure — content, users, constraints — before a single pixel appears.</p>
+            <p>We map the structure. Content, users, constraints, before a single pixel appears.</p>
           </div>
           <div class="thread-step">
             <p class="thread-num">02 — Weave</p>
@@ -595,15 +690,58 @@
           <div class="thread-step">
             <p class="thread-num">03 — Anchor</p>
             <h3>Build</h3>
-            <p>Clean, fast, maintainable code — built to hold weight under real traffic, not just at launch.</p>
+            <p>Clean, fast, maintainable code, built to hold weight under real traffic, not just at launch.</p>
           </div>
           <div class="thread-step">
-            <p class="thread-num">04 — Catch</p>
+            <p class="thread-num">04 — Publish</p>
             <h3>Launch</h3>
-            <p>We watch what the site catches after it goes live, then refine what the data tells us.</p>
+            <p>We set up the site, and make it easily accessible for users.</p>
           </div>
         </div>
       </div>
+    </section>
+
+    <section style="background-color: #9A0002; height:100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#efe6dd"/>
+        </svg>
+    </section>
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Our Story</p>
+          <h2>Three friends, one shared thread.</h2>
+          <p>How Cobwebs Design came to be, and the foundation it was built upon.</p>
+        </div>
+
+        <div class="story-grid reveal">
+          <div>
+            <p class="body-text">We have established Cobwebs Design as three friends who came together in pursuit of a shared business ambition. We've each studied design and applied digital technologies, we developed a working proficiency in a range of coding languages, including but not limited to Lua, Python, HTML, PHP, JavaScript, C#, Python and CSS.</p>
+            <p class="body-text">Recognising that our combined knowledge was sufficient to design and build websites to a professional standard, we have resolved to formalise this capability into a business of our own. It was this genuine passion for coding, paired with a shared enjoyment of website design and creation, that provided the foundation upon which Cobwebs Design was formed.</p>
+          </div>
+          <div class="story-marks">
+            <div class="story-mark">
+              <p class="thread-num">01 — Foundations</p>
+              <p>A shared background in design and applied digital technologies.</p>
+            </div>
+            <div class="story-mark">
+              <p class="thread-num">02 — Craft</p>
+              <p>Proficiency built across several coding languages, applied with care to real projects.</p>
+            </div>
+            <div class="story-mark">
+              <p class="thread-num">03 — Founding</p>
+              <p>A shared passion for coding and design formalised into Cobwebs Design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background-color: #efe6dd; height:100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#E6D7C7"/>
+        </svg>
     </section>
 
     <section class="studio" id="studio">
@@ -611,7 +749,7 @@
         <div class="studio-grid">
           <div class="reveal">
             <p class="eyebrow">Studio</p>
-            <h2 style="font-family:var(--serif); font-weight:400; font-size:clamp(1.7rem,3.2vw,2.3rem); line-height:1.25; margin-top:18px;">Built like a good web — nothing wasted, nothing missing.</h2>
+            <h2 style="font-family:var(--serif); font-weight:400; font-size:clamp(1.7rem,3.2vw,2.3rem); line-height:1.25; margin-top:18px;">Built like a good web. Nothing wasted, nothing missing.</h2>
             <p class="body-text" style="margin-top:24px;">Cobwebs Design is a small studio based on the Sunshine Coast. We work with founders and small teams who need a site that loads fast, reads clearly, and holds up under real traffic — not just a portfolio piece for launch day.</p>
             <p class="body-text">We keep the client list short on purpose. Fewer projects at once means every strand gets proper tension, and every site gets the attention it was actually paid for.</p>
           </div>
@@ -622,12 +760,18 @@
       </div>
     </section>
 
+    <section style="background-color: #E6D7C7; height:100px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+            <path d="M0,050 Q300,0 600,50 T1200,30 L1200,100 L0,100 Z" fill="#7D1A1A"/>
+        </svg>
+    </section>
+
     <section class="cta" id="contact">
       <div class="wrap">
         <div class="cta-inner reveal">
           <p class="eyebrow">Get in touch</p>
           <h2>Let's start <em>weaving.</em></h2>
-          <p>Tell us what you're building — we reply within two working days, with next steps, not a sales call.</p>
+          <p>Tell us what you're building, we reply within two working days, with next steps, not a sales call.</p>
           <div class="cta-actions">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@cobwebs.design&su=New%20project%20enquiry" target="_blank" rel="noopener" class="btn btn-primary">Email the studio</a>
             <a href="#services" class="btn btn-ghost-dark">See our services</a>
@@ -640,17 +784,22 @@
   <footer class="footer">
     <div class="wrap">
       <div class="footer-brand">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="1.6" fill="#EFE6DD"/>
-          <path d="M12 12L12 2.5M12 12L20.5 7M12 12L20.5 17M12 12L12 21.5M12 12L3.5 17M12 12L3.5 7" stroke="#EFE6DD" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.9"/>
-        </svg>
+        <img src="logo.png" alt="Cobwebs Design logo" class="footer-logo">
         COBWEBS DESIGN · SUNSHINE COAST, AU · © 2026
       </div>
       <div class="footer-links">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
+        <a href="#story">Our Story</a>
         <a href="#studio">Studio</a>
         <a href="#contact">Contact</a>
+        <a href="https://instagram.com/cob.websdesign" target="_blank" rel="noopener" aria-label="Cobwebs Design on Instagram" class="footer-social">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.4" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="17.4" cy="6.6" r="1.15" fill="currentColor"/>
+          </svg>
+        </a>
       </div>
     </div>
   </footer>
@@ -772,6 +921,106 @@
     window.addEventListener('resize', resize);
     resize();
     step();
+  })();
+
+  // ---------- process section: water-droplet ripples ----------
+  (function(){
+    const section = document.getElementById('process');
+    const canvas = section && section.querySelector('.process-ripple-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let w = 0, h = 0, dpr = 1;
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = section.clientWidth;
+      h = section.clientHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    const ripples = [];
+
+    function spawnRipple(){
+      // random spot anywhere within the section, including near/off the edges
+      const x = Math.random() * w;
+      const y = Math.random() * h;
+      // grow large enough that rings travel well past the section's bounds
+      const maxR = Math.max(w, h) * 0.9 + 200;
+      ripples.push({
+        x, y, maxR,
+        start: performance.now(),
+        duration: 3200 + Math.random() * 1400, // ms
+        rings: 3,
+        strength: 0.55 + Math.random() * 0.3
+      });
+    }
+
+    function scheduleNext(){
+      const delay = 1000 + Math.random() * 4000; // every 1-5s
+      setTimeout(()=>{
+        spawnRipple();
+        scheduleNext();
+      }, delay);
+    }
+
+    function draw(now){
+      ctx.clearRect(0, 0, w, h);
+
+      for(let i = ripples.length - 1; i >= 0; i--){
+        const r = ripples[i];
+        const t = (now - r.start) / r.duration;
+        if(t >= 1){ ripples.splice(i, 1); continue; }
+
+        // ease-out expansion, like a droplet's shockwave slowing as it spreads
+        const ease = 1 - Math.pow(1 - t, 3);
+
+        for(let ring = 0; ring < r.rings; ring++){
+          const ringOffset = ring * 0.16;
+          const ringT = Math.max(0, ease - ringOffset);
+          if(ringT <= 0) continue;
+          const radius = ringT * r.maxR;
+          const fade = Math.max(0, 1 - t - ringOffset * 0.5);
+          const alpha = fade * r.strength * (1 - ring * 0.22);
+          if(alpha <= 0.01) continue;
+
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(239,230,221,${alpha.toFixed(3)})`;
+          ctx.lineWidth = Math.max(0.6, 2.2 * (1 - ringT * 0.7));
+          ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        // small bright flash at the point of impact
+        if(t < 0.18){
+          const flashAlpha = (1 - t / 0.18) * 0.5 * r.strength;
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(239,230,221,${flashAlpha.toFixed(3)})`;
+          ctx.arc(r.x, r.y, 3.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    if(reduced){
+      // respect reduced-motion: draw a single static soft ripple, no animation loop
+      spawnRipple();
+      ctx.clearRect(0, 0, w, h);
+    } else {
+      requestAnimationFrame(draw);
+      // first ripple arrives a little sooner so the effect is noticed
+      setTimeout(spawnRipple, 900);
+      scheduleNext();
+    }
   })();
 </script>
 
